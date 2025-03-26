@@ -3,200 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        * {
-            font-family: monospace;
-        }
-
-        input[type=text], button {
-            padding: 5px;
-        }
-
-        section {
-            margin: 20px;
-            margin-bottom: 40px;
-        }
-
-        .color-box {
-            width: 40px;
-            height: 30px;
-            display: inline-block;
-        }
-
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-    </style>
+    <title>Theme Color Creator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #f0f0f0;
-            --text-color: #333;
-            --primary-color: #007bff;
-            --secondary-color: #6c757d;
-            --primary-light-color: #007bff;
-            --primary-lightest-color: #007bff;
-            --primary-dark-color: #007bff;
-            --secondary-light-color: #6c757d;
+            --main-bg-color: #ffffff;
+            --secondary-bg-color: #ffffff;
+            
+            --dark-text-color: #ffffff;
+            --main-text-color: #ffffff;
+            --light-text-color: #ffffff;
+
+            --primary-dark-color: #ffffff;
+            --primary-main-color: #ffffff;
+            --primary-light-color: #ffffff;
+            --primary-lightest-color: #ffffff;
+
+            --secondary-main-color: #ffffff;
+            --secondary-light-color: #ffffff;
         }
     </style>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <section>
         <h1>Color Inputs</h1>
         <div class="grid-4">
-            <div>bg-color</div>
-            <div>text-color</div>
-            <div>primary-color</div>
-            <div>secondary-color</div>
-            <div><input type="text" id="in-bg-color" value="#f0f0f0" data-jscolor="{}" /></div>
-            <div><input type="text" id="in-text-color" value="#333333" data-jscolor="{}" /></div>
-            <div><input type="text" id="in-primary-color" value="#007bff" data-jscolor="{}" /></div>
-            <div><input type="text" id="in-secondary-color" value="#6c757d" data-jscolor="{}" /></div>
+            <div>main-bg-color</div>
+            <div>main-text-color</div>
+            <div>primary-main-color</div>
+            <div>secondary-main-color</div>
+            <div><input type="text" id="in-main-bg-color" value="#ffffff" data-jscolor="{}" /></div>
+            <div><input type="text" id="in-main-text-color" value="#40404b" data-jscolor="{}" /></div>
+            <div><input type="text" id="in-primary-main-color" value="#1a4c6d" data-jscolor="{}" /></div>
+            <div><input type="text" id="in-secondary-main-color" value="#fd721c" data-jscolor="{}" /></div>
         </div>
         <button id="btn-update-colors">Update Colors</button>
     </section>
     <section>
         <h1>Inferred Colors</h1>
-        <div class="grid-2">
-            <div>bg-color</div>
-            <div><span class="color-box" style="background-color: var(--bg-color);"></span></div>
-            <div>text-color</div>
-            <div><span class="color-box" style="background-color: var(--text-color);"></span></div>
-            <div>primary-color</div>
-            <div><span class="color-box" style="background-color: var(--primary-color);"></span></div>
-            <div>secondary-color</div>
-            <div><span class="color-box" style="background-color: var(--secondary-color);"></span></div>
-            <div>primary-light-color</div>
-            <div><span class="color-box" style="background-color: var(--primary-light-color);"></span></div>
-            <div>primary-lightest-color</div>
-            <div><span class="color-box" style="background-color: var(--primary-lightest-color);"></span></div>
-            <div>primary-dark-color</div>
-            <div><span class="color-box" style="background-color: var(--primary-dark-color);"></span></div>
-            <div>secondary-light-color</div>
-            <div><span class="color-box" style="background-color: var(--secondary-light-color);"></span></div>
+        <div class="grid-4">
+            <div class="col">
+                <div>main-bg-color</div>
+                <div><span class="color-box" style="background-color: var(--main-bg-color);"></span></div>
+                <div>secondary-bg-color</div>
+                <div><span class="color-box" style="background-color: var(--secondary-bg-color);"></span></div>
+            </div>
+            <div class="col">
+                <div>dark-text-color</div>
+                <div><span class="color-box" style="background-color: var(--dark-text-color);"></span></div>
+                <div>main-text-color</div>
+                <div><span class="color-box" style="background-color: var(--main-text-color);"></span></div>
+                <div>light-text-color</div>
+                <div><span class="color-box" style="background-color: var(--light-text-color);"></span></div>
+            </div>
+            <div class="col">
+                <div>primary-dark-color</div>
+                <div><span class="color-box" style="background-color: var(--primary-dark-color);"></span></div>
+                <div>primary-main-color</div>
+                <div><span class="color-box" style="background-color: var(--primary-main-color);"></span></div>
+                <div>primary-light-color</div>
+                <div><span class="color-box" style="background-color: var(--primary-light-color);"></span></div>
+                <div>primary-lightest-color</div>
+                <div><span class="color-box" style="background-color: var(--primary-lightest-color);"></span></div>
+            </div>
+            <div class="col">
+                <div>secondary-main-color</div>
+                <div><span class="color-box" style="background-color: var(--secondary-main-color);"></span></div>
+                <div>secondary-light-color</div>
+                <div><span class="color-box" style="background-color: var(--secondary-light-color);"></span></div>
+            </div>
+        </div>
+    </section>
+    <section class="preview">
+        <h1>Preview</h1>
+        <div class="container">
+            <div class="block">
+                <button class="primary">Click Me</button>
+            </div>
+
+            <div class="hero block">
+                <h2>Lorem ipsum dolor sit amet</h2>
+                <p>Ut lacus diam, molestie at ultricies sit amet, dapibus sit amet erat. Praesent faucibus lectus sit amet facilisis posuere. Nunc nibh sem, hendrerit a ex non, semper vehicula erat. Cras mi diam, commodo sollicitudin dictum et, vestibulum et risus.</p>
+                <button class="secondary">Click Me</button>
+            </div>
+
+            <div class="page-hero block">
+                <span class="logo">LI</span>
+                <div>
+                    <h2>Lorem ipsum dolor sit amet</h2>
+                    <p>Ut lacus diam, molestie at ultricies sit amet, dapibus sit amet erat. Praesent faucibus lectus sit amet facilisis posuere. Nunc nibh sem, hendrerit a ex non, semper vehicula erat. Cras mi diam, commodo sollicitudin dictum et, vestibulum et risus.</p>
+                </div>
+            </div>
+
+            <div class="plain-content block">
+                <h2>Lorem ipsum dolor sit amet</h2>
+                <p>Ut lacus diam, molestie at ultricies sit amet, dapibus sit amet erat. Praesent faucibus lectus sit amet facilisis posuere. Nunc nibh sem, hendrerit a ex non, semper vehicula erat. Cras mi diam, commodo sollicitudin dictum et, vestibulum et risus.</p>
+            </div>
         </div>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.5.2/jscolor.min.js"></script>
-
-    <script>
-        const hexToHSL = (hex) => {
-            // Remove the hash at the start if it's there
-            hex = hex.replace(/^#/, '');
-        
-            // Parse r, g, b values
-            let r = parseInt(hex.substring(0, 2), 16) / 255;
-            let g = parseInt(hex.substring(2, 4), 16) / 255;
-            let b = parseInt(hex.substring(4, 6), 16) / 255;
-        
-            // Find min and max values
-            let max = Math.max(r, g, b), min = Math.min(r, g, b);
-            let h, s, l = (max + min) / 2;
-        
-            if (max === min) {
-                h = s = 0; // Achromatic
-            } else {
-                let d = max - min;
-                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-                switch (max) {
-                    case r:
-                        h = (g - b) / d + (g < b ? 6 : 0);
-                        break;
-                    case g:
-                        h = (b - r) / d + 2;
-                        break;
-                    case b:
-                        h = (r - g) / d + 4;
-                        break;
-                }
-                h = Math.round(h * 60);
-            }
-        
-            s = Math.round(s * 100);
-            l = Math.round(l * 100);
-            return `hsl(${h}, ${s}%, ${l}%)`;
-        };
-
-        const isDarkMode = (hex) => {
-            // Remove the hash at the start if it's there
-            hex = hex.replace(/^#/, '');
-        
-            // Convert to RGB
-            let r = parseInt(hex.substring(0, 2), 16);
-            let g = parseInt(hex.substring(2, 4), 16);
-            let b = parseInt(hex.substring(4, 6), 16);
-        
-            // Convert RGB to relative luminance
-            function luminance(value) {
-                let v = value / 255;
-                return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
-            }
-        
-            let L = 0.2126 * luminance(r) + 0.7152 * luminance(g) + 0.0722 * luminance(b);
-        
-            // Define a threshold (0.5 is a common choice)
-            return L < 0.5 ? "dark" : "light";
-        }
-
-        function adjustHSL(hsl, percentage) {
-            // Extract H, S, and L from the HSL string
-            let match = hsl.match(/^hsl\((\d+),\s*(\d+)%,\s*(\d+)%\)$/);
-            if (!match) {
-                throw new Error("Invalid HSL format. Use 'hsl(H, S%, L%)'");
-            }
-        
-            let h = parseInt(match[1], 10);
-            let s = parseInt(match[2], 10);
-            let l = parseInt(match[3], 10);
-        
-            // Adjust the Lightness by the given percentage
-            l = Math.max(0, Math.min(100, l + (l * percentage) / 100));
-        
-            // Return the new HSL color
-            return `hsl(${h}, ${s}%, ${Math.round(l)}%)`;
-        }
-
-        $(document).ready(() => {
-            $('#btn-update-colors').click(() => {
-                const bg_color = $('#in-bg-color').val();
-                const text_color = $('#in-text-color').val();
-                const primary_color = $('#in-primary-color').val();
-                const secondary_color = $('#in-secondary-color').val();
-
-                const multiplier = isDarkMode(bg_color) === 'dark' ? -1 : 1;
-
-                const primary_color_hsl = hexToHSL(primary_color);
-                const primary_light_color_hsl = adjustHSL(primary_color_hsl, multiplier * 20);
-                const primary_lightest_color_hsl = adjustHSL(primary_color_hsl, multiplier * 80);
-                const primary_dark_color_hsl = adjustHSL(primary_color_hsl, multiplier * -20);
-                const secondary_color_hsl = hexToHSL(secondary_color);
-                const secondary_light_color_hsl = adjustHSL(secondary_color_hsl, multiplier * 20);
-
-
-                $(':root').css('--bg-color', bg_color);
-                $(':root').css('--text-color', text_color);
-                $(':root').css('--primary-color', primary_color);
-                $(':root').css('--secondary-color', secondary_color);
-                $(':root').css('--primary-light-color', primary_light_color_hsl);
-                $(':root').css('--primary-lightest-color', primary_lightest_color_hsl);
-                $(':root').css('--primary-dark-color', primary_dark_color_hsl);
-                $(':root').css('--secondary-light-color', secondary_light_color_hsl);
-            });
-        })
-
-    </script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>

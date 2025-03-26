@@ -1,0 +1,140 @@
+* {
+    font-family: monospace;
+}
+
+input[type=text], button {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+section {
+    margin: 20px;
+    margin-bottom: 40px;
+}
+
+.color-box {
+    width: 40px;
+    height: 30px;
+    display: inline-block;
+    border: 1px solid #ccc;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Preview */
+.preview {   
+}
+
+.preview .block {
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.preview .container {
+    background-color: var(--main-bg-color);
+    padding: 20px;
+}
+
+.preview .container * {
+    font-family: "Montserrat", sans-serif;
+}
+
+.preview h2 {
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+}
+
+preview p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5rem;
+}
+
+.preview button {
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.preview button.primary {
+    background-color: var(--primary-main-color);
+    color: var(--light-text-color);
+}
+
+.preview button.primary:hover {
+    background-color: var(--primary-light-color);
+}
+
+.preview button.secondary {
+    background-color: var(--secondary-main-color);
+    color: var(--light-text-color);
+}
+
+.preview button.secondary:hover {
+    background-color: var(--secondary-light-color);
+}
+
+.preview .hero {
+    background: linear-gradient(90deg, var(--primary-main-color), var(--primary-light-color));
+    border-radius: 5px;;
+}
+
+.preview .hero h2 {
+    color: var(--light-text-color);
+}
+
+.preview .hero p {
+    color: var(--light-text-color);
+}
+
+.preview .page-hero {
+    background-color: var(--primary-lightest-color);
+    border-radius: 5px;
+    padding: 20px;
+    color: var(--light-text-color);
+    display: flex;
+}
+
+.preview .page-hero .logo {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary-main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: var(--light-text-color);
+    font-size: 48px;
+    font-weight: 500;
+    margin-right: 20px; 
+}
+
+.preview .page-hero h2 {
+    color: var(--dark-text-color);
+}
+
+.preview .page-hero p {
+    color: var(--main-text-color);
+}
+
+.preview .plain-content h2 {
+    color: var(--dark-text-color);
+}
+
+.preview .plain-content p {
+    color: var(--main-text-color);
+}
