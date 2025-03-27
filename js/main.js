@@ -59,7 +59,7 @@ const isDarkMode = (hex) => {
     return L < 0.5;
 };
 
-const adjustHSL = (hsl, percentage) => {
+const adjustHSL = (hsl, percentage, exact) => {
     // Extract H, S, and L from the HSL string
     let match = hsl.match(/^hsl\((\d+),\s*(\d+)%,\s*(\d+)%\)$/);
     if (!match) {
@@ -72,7 +72,11 @@ const adjustHSL = (hsl, percentage) => {
 
     // Adjust the Lightness by the given percentage
     //l = Math.max(0, Math.min(100, l + (l * percentage) / 100));
-    l = l + ((100 - l) * percentage / 100);
+    if (exact) {   
+        l = percentage;
+    } else {
+        l = l + ((100 - l) * percentage / 100);
+    }
 
     // Return the new HSL color
     return `hsl(${h}, ${s}%, ${Math.round(l)}%)`;
@@ -96,7 +100,7 @@ const updateColors = () => {
         secondary_main: hexToHSL(raw.secondary_main),
     };
 
-    hsl.secondary_bg = adjustHSL(hsl.main_bg, multiplier * -20);
+    hsl.secondary_bg = is_dark_mode ? adjustHSL(hsl.main_bg, 30, true) : adjustHSL(hsl.main_bg, 90, true);
 
     hsl.light_text = is_dark_mode ? CLR_BLACK : CLR_WHITE;
     hsl.dark_text = is_dark_mode ? CLR_WHITE : CLR_BLACK;
